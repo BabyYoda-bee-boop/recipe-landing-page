@@ -1,3 +1,66 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 48em;
+  margin-inline: auto;
+  padding-inline: clamp(0.5rem, 5vw, 1rem);
+}
+
+body {
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: hsl(30, 10%, 34%);
+  font-size: 1rem;
+  min-height: 100vh;
+  background-color: hsl(30, 54%, 90%);
+}
+
+.card {
+  background-color: #fff;
+  padding: 2.5em;
+  border-radius: 1.2em;
+}
+.card__img {
+  border-radius: 0.8em;
+  margin-inline: auto;
+}
+.card__title {
+  font-family: "Young Serif", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: hsl(24, 5%, 18%);
+  margin-block: 0.75em 0.25em;
+}
+.card__prep {
+  background-color: hsl(330, 100%, 98%);
+  margin-block: 1.25em;
+  padding: 1.5em;
+}
+.card__prep-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: hsl(332, 51%, 32%);
+  margin-bottom: 0.5em;
+}
+.card__prep-list {
+  padding-left: 1.25em;
+}
+.card__prep-item {
+  list-style: outside;
+  line-height: 2;
+  padding-left: 1.25em;
+}
+.card__prep-item span {
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=main.css.map */
