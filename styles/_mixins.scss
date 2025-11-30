@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+%marker-base {
+  position: relative;
+  line-height: $line-height-m;
+  padding-left: $padding-l * 2;
+  padding-bottom: $padding-s;
+
+  span {
+    font-weight: $fw-700;
+  }
+}
+
+@mixin marker-bullet ($marker-color: currentColor) {
+    @extend %marker-base;
+    
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: $fs-450;
+      color: $marker-color;
+    }
+  }
+
+@mixin marker-number ($marker-color: currentColor, $counter) {
+    @extend %marker-base;
+    
+    &::before {
+      content: counter($counter) ".";
+      counter-increment: $counter;
+      position: absolute;
+      left: 0;
+      font-size: $fs-450;
+      color: $marker-color;
+      font-size: $fs-400;
+      font-weight: $fw-700;
+    }
+  }

@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 
 *, *::after, *::before {
@@ -17,17 +18,26 @@ img {
 body {
   font-family: $ff-primary;
   font-weight: $fw-400;
+  font-size: $fs-400;
   line-height: $line-height-m;
   color: $clr-text-600;
-  font-size: 1rem;
   min-height: 100vh;
   background-color: $clr-bg-100;
 }
 
 .card {
   background-color: #fff;
-  padding: calc($padding-xl * 2);
+  padding: $padding-xl * 2;
   border-radius: $radius-l;
+  margin-block: $padding-xl * 3;
+
+  hr {
+    border: 1px solid $clr-bg-150;
+    transform: scaleY(0.5);
+    margin-block: $padding-xl;
+  }
+  ul, ol {padding-left: $padding-s;}
+  
   &__img {
     border-radius: $radius-m;
     margin-inline: auto;
@@ -43,20 +53,56 @@ body {
     background-color: $clr-bg-50;
     margin-block: $padding-xl;
     padding: $padding-m * 2;
+    border-radius: $radius-m;
     &-title {
       font-size: $fs-450;
       font-weight: $fw-500;
       color: $clr-accent;
+      margin-bottom: $padding-m;
+    }
+    &-item {
+     @include marker-bullet($clr-accent)
+    }
+  }
+
+  &__section {
+    &-title {
+      font-family: $ff-secondary;
+      font-size: $fs-550;
+      color: $clr-head-800;
       margin-bottom: $padding-s;
     }
-    &-list {padding-left: $padding-xl;}
-    &-item {
-      list-style: outside;
-      line-height: $line-height-l;
-      padding-left: $padding-xl;
-      & span {
-        font-weight: $fw-700;
+    ul {
+      li {
+        @include marker-bullet($clr-head-800)
       }
     }
+    ol {
+      counter-reset: item;
+      li {
+        @include marker-number($clr-head-800, item)
+      }
+    }
+  }
+  &__nutrition-table {
+    width: 100%;
+    text-align: left;
+    line-height: $line-height-l;
+    
+    tr {
+      th, td {width: 50%;}
+      th {
+        padding-left: $padding-xl * 2;
+        padding-block: $padding-s;
+      }
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $clr-bg-150;
+      }
+      td {
+        font-weight: $fw-700;
+        color: $clr-head-800;
+      }
+    }
+
   }
 }

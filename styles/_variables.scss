@@ -7,6 +7,7 @@ $clr-text-600: hsl(30, 10%, 34%)
 ;
 $clr-accent: hsl(332, 51%, 32%); // prep time head, bullets
 
+$clr-bg-150: hsl(30, 18%, 87%);
 $clr-bg-100: hsl(30, 54%, 90%);
 $clr-bg-50: hsl(330, 100%, 98%);
 
@@ -18,11 +19,12 @@ $fw-600: 600;
 $fw-500: 500;
 $fw-400: 400;
 
-$fs-700: 2.5rem;
-$fs-600: 2rem;
-$fs-500: 1.5rem;
-$fs-450: 1.25rem;
-$fs-400: 1rem;
+$fs-700: clamp(2rem, 1.5466rem + 2.0725vw, 2.5rem);
+$fs-600: clamp(1.75rem, 1.5233rem + 1.0363vw, 2rem);
+$fs-550: clamp(1.5rem, 1.2733rem + 1.0363vw, 1.75rem);
+$fs-500: clamp(1.25rem, 1.0233rem + 1.0363vw, 1.5rem);
+$fs-450: clamp(1rem, 0.7733rem + 1.0363vw, 1.25rem);
+$fs-400: clamp(0.875rem, 0.7617rem + 0.5181vw, 1rem);
 
 //spacings
 $base-padding: 0.25em;
