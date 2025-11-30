@@ -32,8 +32,8 @@ body {
   margin-block: $padding-xl * 3;
 
   hr {
-    border: 1px solid $clr-bg-150;
-    transform: scaleY(0.5);
+    border: none;
+    border-top: 1px solid $clr-bg-150;
     margin-block: $padding-xl;
   }
   ul, ol {padding-left: $padding-s;}
